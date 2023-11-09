@@ -3,9 +3,9 @@
 ## Informations
 
 **Catégorie :** Library  
-**Langage :** ☕ Java  
-**État du projet :** 🟢 Terminé/Fonctionnel  
-**Description :** API   
+**Langage :** :coffee: Java  
+**État du projet :** :green_circle: Terminé/Fonctionnel  
+**Description :** API qui gere la base du serveur   
 **Liens** : https://library.nimelia.fr
 
 ## Développeurs
@@ -50,9 +50,13 @@ dependencies {
 ```
 ## Utilisation
 
+
+> [!WARNING]
+> Vous ne pouvez pas importer VelocityRegister et BukkitRegister en même temps sauf si votre plugin est fait pour Bukkit et Velocity
+
 **Main**
 ```JAVA
-public CommonAPI common;
+private CommonAPI common;
 
 public void onEnable() {
   common = new CommonAPI();
@@ -69,10 +73,11 @@ public void onEnable() {
 
 *Velocity*
 ```JAVA
-@CommandInfo(name = "test" , ect")
+@CommandInfo(name = "test" , ...)
 public class ExempleCommand extends VelocityPluginCommand {
 
     public GroupCommand() {
+	//super(ProxyServer)
         super(Velocity.INSTANCE);
     }
 
@@ -85,10 +90,11 @@ public class ExempleCommand extends VelocityPluginCommand {
 
 *Bukkit*
 ```JAVA
-@CommandInfo(name = "test" , ect")
+@CommandInfo(name = "test" , ...)
 public class ExempleCommand extends BukkitPluginCommand {
 
     public GroupCommand() {
+	//super(JavaPlugin)
         super(Bukkit.INSTANCE);
     }
 
@@ -110,4 +116,4 @@ public class ExempleCommand extends BukkitPluginCommand {
 
 ## Licence
 
-@Nimelia détient tous les droits sur le code ci-dessous, il est formellement interdit de le divulguer ou de l'utiliser à des fins personnelles.
+@NimeliaMC détient tous les droits sur le code ci-dessous, il est formellement interdit de le divulguer ou de l'utiliser à des fins personnelles.
